@@ -1,0 +1,332 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMLfKT/zHZ4Bmp9IrtR3peR",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/ErikPrade/Exercicios-de-LISTA-phyton-faculdade/blob/main/LISTAS%2013/05\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vGjlvDf_cOwX",
+        "outputId": "8f010021-ffcc-437f-fc46-c0ff142c791c"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['coca', 'fruki', 'pepsi', 'agua', 'fanta']\n",
+            "5\n"
+          ]
+        }
+      ],
+      "source": [
+        "produtos = [\"coca\",\"fruki\",\"sprite\",\"agua\",\"fanta\"]\n",
+        "produtos[2] = \"pepsi\"\n",
+        "print(produtos)\n",
+        "print(len(produtos))\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "produtos = [\"tv\", \"celular\", \"mouse\", \"teclado\", \"tablet\"]\n",
+        "estoque = [100, 150, 80, 120, 60]\n",
+        "\n",
+        "produto = input(\"Digite o nome do produto que deseja: \")\n",
+        "if produto in produtos:\n",
+        "    i = produtos.index(produto)\n",
+        "\n",
+        "    quantidade = estoque[i]\n",
+        "\n",
+        "    print(f\"O produto {produto} está na posição {i} da lista.\")\n",
+        "    print(f\"Temos {quantidade} unidades em estoque.\")\n",
+        "else:\n",
+        "    print(\"Produto não encontrado no sistema.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ea0xPE9Ah99b",
+        "outputId": "fe2b77f7-3b82-4493-eae7-0e129db7ac39"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite o nome do produto que deseja: tv\n",
+            "O produto tv está na posição 0 da lista.\n",
+            "Temos 100 unidades em estoque.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "vendas = [1000, 1500, 350, 270, 900, 1200, 700]\n",
+        "print(len(vendas))\n",
+        "print(sum(vendas))\n",
+        "\n",
+        "if max(vendas) < 1400:\n",
+        "    print(f\"a maior venda foi menor que: 1400\")\n",
+        "if max(vendas) > 1400:\n",
+        "    print(f\"a maior venda foi maior que: 1400\")\n",
+        "if min(vendas) < 300:\n",
+        "    print(f\"a menor venda foi menor que: 300\")\n",
+        "if min(vendas) > 300:\n",
+        "    print(f\"a menor venda foi maior que: 300\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "C4ERi3GEoUHC",
+        "outputId": "8b362b35-600f-41bb-b25d-0c4d27befdb8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "7\n",
+            "5920\n",
+            "a maior venda foi maior que: 1400\n",
+            "a menor venda foi menor que: 300\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "produtos = [\"apple tv\", \"mac\", \"iphone x\", \"iPad\"]\n",
+        "novos_produtos = [\"apple watch\", \"mac book\", \"airpods\"]\n",
+        "\n",
+        "produtos.extend(novos_produtos)\n",
+        "print(produtos)\n",
+        "produtos_lista_original = [\"apple tv\", \"mac\", \"iphone x\", \"iPad\"]\n",
+        "produtos_completos = produtos_lista_original + novos_produtos\n",
+        "print(produtos_completos)\n",
+        "\n",
+        "produtos_teste = [\"apple tv\", \"mac\", \"iphone x\"]\n",
+        "novos = [\"airpods\", \"apple watch\"]\n",
+        "\n",
+        "produtos_teste.append(novos)\n",
+        "print(produtos_teste)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "a4MaOhVtx3wb",
+        "outputId": "0255863a-f745-4a6e-9443-836c68bf29ad"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['apple tv', 'mac', 'iphone x', 'iPad', 'apple watch', 'mac book', 'airpods']\n",
+            "['apple tv', 'mac', 'iphone x', 'iPad', 'apple watch', 'mac book', 'airpods']\n",
+            "['apple tv', 'mac', 'iphone x', ['airpods', 'apple watch']]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "produtos = [\"apple tv\", \"mac\", \"iphone x\", \"iPad\", \"apple watch\", \"mac book\", \"airpods\"]\n",
+        "vendas = [1000, 1500, 15000, 270, 900, 100, 1200]\n",
+        "lancamento = [2010, 2026, 2009, 2005, 1997, 2001, 2022]\n",
+        "\n",
+        "produtos_ordenados = sorted(produtos)\n",
+        "\n",
+        "vendas_ordenadas = sorted(vendas)\n",
+        "\n",
+        "lancamento_ordenado = sorted(lancamento, reverse=True)\n",
+        "\n",
+        "print(\"\\n\".join(produtos_ordenados))\n",
+        "\n",
+        "print(vendas_ordenadas)\n",
+        "print(lancamento_ordenado)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6Qh38VVuz4YZ",
+        "outputId": "4c036d70-55be-4b2d-e11d-9298f2b05245"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "airpods\n",
+            "apple tv\n",
+            "apple watch\n",
+            "iPad\n",
+            "iphone x\n",
+            "mac\n",
+            "mac book\n",
+            "[100, 270, 900, 1000, 1200, 1500, 15000]\n",
+            "[2026, 2022, 2010, 2009, 2005, 2001, 1997]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "texto_produtos = \"apple tv, mac, iphone x, iPad, apple watch, mac book, airpods\"\n",
+        "\n",
+        "lista_produtos = texto_produtos.split(\", \")\n",
+        "\n",
+        "print(lista_produtos)\n",
+        "\n",
+        "print(len(lista_produtos))\n",
+        "\n",
+        "busca = input(\"Digite o produto que deseja encontrar: \")\n",
+        "\n",
+        "if busca in lista_produtos:\n",
+        "    posicao = lista_produtos.index(busca)\n",
+        "    print(f\"O produto está na posição: {posicao}\")\n",
+        "else:\n",
+        "    print(\"Produto indisponível\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qNqHrmQh0t8F",
+        "outputId": "1923d9e0-89d7-4db4-810e-87160f878081"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['apple tv', 'mac', 'iphone x', 'iPad', 'apple watch', 'mac book', 'airpods']\n",
+            "7\n",
+            "Digite o produto que deseja encontrar: mac\n",
+            "O produto está na posição: 1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "lista1 = [\"apple tv\", \"mac\", \"iphone 12\", \"iPad\", \"notebook\"]\n",
+        "\n",
+        "lista2 = lista1.copy()\n",
+        "\n",
+        "lista2[4] = \"pc\"\n",
+        "\n",
+        "print(f\"Lista Original: {lista1}\")\n",
+        "print(f\"Lista Alterada: {lista2}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "EpIV1Vb91OX3",
+        "outputId": "b8614d32-8c37-4698-992f-10a173ddaad7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Lista Original: ['apple tv', 'mac', 'iphone 12', 'iPad', 'notebook']\n",
+            "Lista Alterada: ['apple tv', 'mac', 'iphone 12', 'iPad', 'pc']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "vendedores = [\"Lira\", \"Joao\", \"Diego\", \"Alon\"]\n",
+        "produtos = [\"ipad\", \"iphone\"]\n",
+        "vendas = [\n",
+        "    [100, 200],\n",
+        "    [300, 500],\n",
+        "    [50, 1000],\n",
+        "    [900, 10]   ]\n",
+        "\n",
+        "\n",
+        "print(f\"Vendas totais do João: {vendas[1]}\")\n",
+        "\n",
+        "venda_iphone_diego = vendas[2][1]\n",
+        "print(f\"Vendas de iPhone do Diego: {venda_iphone_diego}\")\n",
+        "\n",
+        "busca = input(\"Digite o nome do vendedor: \")\n",
+        "\n",
+        "if busca in vendedores:\n",
+        "    i = vendedores.index(busca)\n",
+        "    quantidade_total = sum(vendas[i])\n",
+        "    print(f\"O vendedor {busca} vendeu um total de {quantidade_total} unidades.\")\n",
+        "else:\n",
+        "    print(\"Vendedor não encontrado\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mredSiSW1eKr",
+        "outputId": "2718a804-f179-47d7-a357-8c293f68ac8a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Vendas totais do João: [300, 500]\n",
+            "Vendas de iPhone do Diego: 1000\n",
+            "Digite o nome do vendedor: Joao\n",
+            "O vendedor Joao vendeu um total de 800 unidades.\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
